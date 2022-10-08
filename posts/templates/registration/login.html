@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналитик</title>
+</head>
+<body>
+
+<br>
+
+
+<center>
+
+    
+    <form  method="post">
+        <h2>Вход</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+    
+        <button>Войти</button>    
+    </form>
+    <br>
+    Вы ещё не зарегестрированы? <br>
+    <a href="{% url 'signup' %}">Зарегистрироваться</a>
+</center>
+</body>
+</html>
