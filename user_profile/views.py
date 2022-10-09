@@ -1,10 +1,8 @@
-from pydoc import pager
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
-from profil.models import Profile
+from user_profile.models import Profile
 from django.views.generic import DetailView, CreateView
-
-from profil.models import Follower
+from user_profile.models import UserFollowing
 
 class ProfileView(DetailView):
     model = Profile
@@ -31,8 +29,8 @@ class CreateProfileView(CreateView):
 
 
 def post(self, requset):
-    user = Follower.objects.get(user_id=self.requset.get('user_id'))
-    follow = Follower.objects.get(user_id=self.requset.get('follow'))
+    user = UserFollowing.objects.get(user_id=self.requset.get('user_id'))
+    follow = UserFollowing.objects.get(user_id=self.requset.get('following_user_id'))
     follow.following.add(follow)
     user.save()
     follow.followers.add(user)
