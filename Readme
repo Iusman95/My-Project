@@ -1,0 +1,10 @@
+# My-Project
+1. Создайте виртуальное окружение 
+
+2. Чтобы весь код работал нужно скачать несколько библиотек: django, Pillow 
+Чтобы скачать их, введите в терминал следующие команды: pip install django Pillow 
+
+3.Создайте и примените миграции с помощью команд: python ./manage.py makemigrations
+                                                  python ./manage.py migrate 
+                                                  
+4.Запустите проект: python ./manage.py runserver  
